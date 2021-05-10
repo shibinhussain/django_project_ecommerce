@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Seller details  {% endblock %}
+{% block content %}
+
+<center>
+    <form action="/sel_insert/" method="POST">
+        {% csrf_token %}
+        <label>Seller id:</label>
+        <input type="text" name="sel_id" > <br><br>
+
+        <label>Seller Name:</label>
+        <input type="text" name="sel_name" > <br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" > <br><br>
+
+        <label>Experience:</label>
+        <input type="number" name="exp" > <br><br>
+
+        <label>Salary:</label>
+        <input type="number" name="sal" > <br><br>
+
+        <button type="submit">submit</button>
+    </form>
+</center>
+{% endblock %}

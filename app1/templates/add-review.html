@@ -1,0 +1,15 @@
+{% extends "Customer.html" %}
+{% block title %} Review {% endblock %}
+{% block content %}
+
+<center>
+    <form action="/insert-review/" method="POST">
+        {% csrf_token %}
+        <label>Your review: </label> <br>
+        <textarea name="review" placeholder="Enter your review" cols="30" rows="10"></textarea> <br><br>
+    
+        <button type="submit">Submit Review</button>
+    </form>
+</center>
+
+{% endblock %}

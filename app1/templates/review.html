@@ -1,0 +1,24 @@
+{% extends "Customer.html" %}
+{% block title %} Review {% endblock %}
+{% block content %}
+
+
+<center>
+    <table border="1" cellspacing="10" cellpadding="10" style="border-collapse: collapse;">
+        <thead>
+            <th>Product Name</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </thead>
+        {% for i in ob %}
+        <tr>
+            <td>{{i.productname}}</td>
+            <td><img src="{{i.item}}" height="100" width="100" ></td>
+            <td><a href="/add-review">Add Review</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+
+{% endblock %}

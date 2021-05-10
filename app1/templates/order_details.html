@@ -1,0 +1,27 @@
+{% extends "Customer.html" %}
+{% block title %} Customer View {% endblock %}
+{% block content %}
+
+<center>
+    <form action="/orderpdtsub/" method="POST">
+        {% csrf_token %}
+        <label>Name :</label>
+        <input type="text" name="name"> <br><br>
+
+        <label>Address :</label>
+        <input type="text" name="address"> <br><br>
+
+        <label>Phone:</label>
+        <input type="number" name="phone"> <br><br>
+
+        <label>Product Name :</label>
+        <input type="text" name="pdtname" value="{{ob.productname}}"> <br><br>
+
+        <label>Price :</label>
+        <input type="text" name="price" value="{{ob.price}}"> <br><br>
+
+        <button type="submit">Place Order</button>
+    </form>
+</center>
+
+{% endblock %}

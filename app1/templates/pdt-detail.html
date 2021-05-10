@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Product Details  {% endblock %}
+{% block content %}
+    <center>
+        <form action="/pdt-insert/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Product name:</label>
+            <input type="text" name="pdt-name"> <br><br>
+
+            <label>Quantity:</label>
+            <input type="number" name="qty"> <br><br>
+
+            <label>Price:</label>
+            <input type="number" name="price"> <br><br>
+
+            <label>Offer:</label>
+            <input type="text" name="ofr"> <br><br>
+
+            <label>Item:</label>
+            <input type="file" name="image"multiple><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </center>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Seller edit  {% endblock %}
+{% block content %}
+
+<center>
+    <form action="/sell-update/{{ob.id}}" method="POST">
+        {% csrf_token %}
+        <label>Seller Id:</label>
+        <input type="text" name="sel_id" value="{{ob.sellerid}}"> <br><br>
+
+        <label>Seller name:</label>
+        <input type="text" name="sel_name" value="{{ob.sellername}}"> <br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" value="{{ob.age}}"> <br><br>
+
+        <label>Experience:</label>
+        <input type="number" name="exp" value="{{ob.exp}}"> <br><br>
+
+        <label>Salary:</label>
+        <input type="number" name="sal" value="{{ob.sal}}"> <br><br>
+
+        <button type="submit">Update</button><br><br>
+
+        <!-- <a href="/sel_delete/{{i.id}}">Delete this Seller</a> -->
+        
+    </form>
+</center>
+
+
+{% endblock %}

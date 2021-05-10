@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Product edit  {% endblock %}
+{% block content %}
+
+<center>
+    <form action="/pdt-update/{{ob.id}}" method="POST">
+        {% csrf_token %}
+        <label>Product name:</label>
+        <input type="text" name="pdt-name" value="{{ob.productname}}"> <br><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="qty" value="{{ob.quantity}}"> <br><br>
+
+        <label>Price:</label>
+        <input type="number" name="price" value="{{ob.price}}"> <br><br>
+
+        <label>Offer:</label>
+        <input type="text" name="ofr" value="{{ob.offer}}"> <br><br>
+
+        <label>Item:</label>
+        <input type="file" name="image" value="{{ob.item}}"> <br><br>
+
+        <button type="submit">Update</button>
+    </form>
+</center>
+
+
+{% endblock %}

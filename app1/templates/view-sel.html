@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Product update  {% endblock %}
+{% block content %}
+
+<center>
+    <table border="1" cellspacing="10" cellpadding="10" style="border-collapse: collapse;">
+        <thead>
+            <th>Seller ID</th>
+            <th>Seller Name</th>
+            <th>Age</th>
+            <th>Experience</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </thead>
+        {% for i in ob %}
+        <tr>
+            <td>{{i.sellerid}}</td>
+            <td>{{i.sellername}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.exp}}</td>
+            <td>{{i.sal}}</td>
+            <td>
+                <a href="/edit1/{{i.id}}">Edit</a> /
+                <a href="/sel_delete/{{i.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+{% endblock %}
